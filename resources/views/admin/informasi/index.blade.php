@@ -3,7 +3,7 @@
 @section('title', 'Informasi Halaman Admin')
 
 @section('content_header')
-    <h1>Informasi</h1><h2>Tambah informasi terbaru, edit & hapus. </h2>
+    <h2>Tambah informasi terbaru, edit & hapus. </h2>
     <small> Gunakan pengaturan link untuk menaruh informasi diberbagai link.</small><br>
 @stop
 @section('content')
@@ -42,8 +42,25 @@
 
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/plugins/datatables/dataTables.bootstrap.css">
 @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
+    <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script>
+      $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+      });
+    </script>
 @stop

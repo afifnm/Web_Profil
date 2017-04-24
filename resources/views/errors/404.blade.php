@@ -6,7 +6,7 @@
 @section('content')
   <center>
   <b><h1>404 Not Found</h1>
-    <h2>Anda Kurang Tamvan</h2>
+    <h2>Halaman tidak ada atau belum dibuat oleh pembuat</h2>
   </b>
   </center>
 @stop

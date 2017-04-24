@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Slides;
+use App\Profil;
+use App\Link;
+use App\Informasi;
+use App\User;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +29,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+		 $slides = Slides::all();
+		 $profil = Profil::all();
+		 $informasi = Informasi::all();
+     $link = Link::all();
+      return view('/home', [
+        'link'=>$link,
+        'slides'=>$slides,
+        'informasi'=>$informasi,
+        'profil'=>$profil
+      ]);
     }
 }

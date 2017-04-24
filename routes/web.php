@@ -1,8 +1,5 @@
 <?php
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 Route::get('/admin', function () {
@@ -38,4 +35,4 @@ Route::get('/admin/pengaturan/link/{id}/delete', 'LinkController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
