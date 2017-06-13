@@ -39,6 +39,6 @@ class HomeController extends Controller
     //     'informasi'=>$informasi,
     //     'profil'=>$profil
     //   ]);
-      return view('welcome');
+      return view('halamanutama');
     }
 }
