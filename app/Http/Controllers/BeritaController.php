@@ -10,6 +10,11 @@ use App\Informasi;
 
 class BeritaController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   public function index(){
   $informasi = Informasi::all();
   return view('/admin/informasi/index', ['informasi'=>$informasi]);

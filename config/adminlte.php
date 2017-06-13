@@ -125,11 +125,6 @@ return [
             'icon'        => 'list',
         ],
         [
-            'text'        => 'Upload File',
-            'url'         => 'admin/upload',
-            'icon'        => 'file',
-        ],
-        [
             'text'        => 'Buku Tamu',
             'url'         => 'admin/bukutamu',
             'icon'        => 'book',

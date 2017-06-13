@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<!-- CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="plugins/flexslider/flexslider.css" rel="stylesheet" media="screen" />	
+	<link href="plugins/flexslider/flexslider.css" rel="stylesheet" media="screen" />
 	<link href="css/cubeportfolio.min.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	<!-- Theme skin -->
@@ -37,7 +37,7 @@
 	<div class="mycontent">
 		<div id="wrapper">
 			<!-- start header -->
-			<header>			
+			<header>
 				<div class="navbar navbar-default navbar-static-top">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,10 +58,10 @@
 								<li class="dropdown"><a href="{{ route('register') }}">Register</a></li>
                             @else
 							<li class="dropdown active">
-								<a href="index.html">Halaman Awal</a>
+								<a href="/home">Halaman Awal</a>
 							</li>
 							<li>
-								<a href="tentangkami">Visi & Misi</a>
+								<a href="/tentangkami">Visi & Misi</a>
 							</li>
 
 							<li class="dropdown">
@@ -72,7 +72,7 @@
 									@endforeach
 								</ul>
 							</li>
-							
+
 							<li class="dropdown">
                                 <strong>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -80,7 +80,7 @@
                                 </a>
 								</strong>
 							</li>
-							
+
 							<li class="dropdown">
                                 <a href="{{ route('logout') }}"
 									onclick="event.preventDefault();

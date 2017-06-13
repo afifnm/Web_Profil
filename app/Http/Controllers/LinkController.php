@@ -9,6 +9,10 @@ use App\Http\Requests;
 use App\Link;
 class LinkController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index($kategori){
     $link = DB::table('link')->where('kategori', '=', $kategori)->get();
     return view('/admin/link/index', ['link'=>$link,'kategori'=>$kategori]);

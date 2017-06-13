@@ -9,6 +9,10 @@ use App\Http\Requests;
 use App\Slides;
 class SlidesController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function index(){
   $slides = Slides::all();
   return view('/admin/slides/index', ['slides'=>$slides]);

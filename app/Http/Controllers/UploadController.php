@@ -9,6 +9,10 @@ use App\Http\Requests;
 
 class UploadController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
   public function indexfile(){
     // $link = DB::table('link')->where('kategori', '=', $kategori)->get();
     $folder = public_path('file'); //folder tempat file disimpan

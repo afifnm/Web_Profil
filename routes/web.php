@@ -1,10 +1,8 @@
 <?php
-Route::get('/', 'HomeController@index');
-
 Auth::routes();
-Route::get('/admin', function () {
+Route::get('/admin',['middleware'=>'auth', function () {
     return view('admin/index');
-});
+}]);
 Route::get('/admin/informasi', 'BeritaController@index');
 Route::get('/admin/informasi/tambah', 'BeritaController@create');
 Route::post('/admin/informasi', 'BeritaController@store');
@@ -33,6 +31,7 @@ Route::get('/admin/pengaturan/link', 'LinkController@create');
 Route::post('/admin/pengaturan/link', 'LinkController@store');
 Route::get('/admin/pengaturan/link/{id}/delete', 'LinkController@destroy');
 
-Auth::routes();
+Route::get('/admin/bukutamu', 'BukutamuController@index');
+Route::get('/admin/pendaftaran', 'PendaftaranController@index');
 
 Route::get('/', 'HomeController@index');

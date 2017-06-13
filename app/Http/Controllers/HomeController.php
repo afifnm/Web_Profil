@@ -17,10 +17,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -29,15 +29,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-		 $slides = Slides::all();
-		 $profil = Profil::all();
-		 $informasi = Informasi::all();
-     $link = Link::all();
-      return view('/home', [
-        'link'=>$link,
-        'slides'=>$slides,
-        'informasi'=>$informasi,
-        'profil'=>$profil
-      ]);
+		//  $slides = Slides::all();
+		//  $profil = Profil::all();
+		//  $informasi = Informasi::all();
+    //  $link = Link::all();
+    //   return view('/home', [
+    //     'link'=>$link,
+    //     'slides'=>$slides,
+    //     'informasi'=>$informasi,
+    //     'profil'=>$profil
+    //   ]);
+      return view('welcome');
     }
 }
