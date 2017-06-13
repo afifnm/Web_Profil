@@ -1,4 +1,4 @@
-@extends('layouts.tampilan')
+@extends('layouts.atasbawah')
 
 @section('content')
 <!-- start slider -->
@@ -75,8 +75,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
-				<h3>Single right sidebar page title</h3>
-				<img src="img/dummies/dummy-1200.jpg" alt="" class="img-responsive" />
+				<h3>{{ $informasi->judul }}</h3>
+				<img src="{{ $informasi->gambar }}" alt="" class="img-responsive" />
 	
 		
 			<div class="col-lg-4">
@@ -89,50 +89,26 @@
 					</form>
 				</div>
 				<div class="widget">
-					<h5 class="widgetheading">Categories</h5>
-					<ul class="cat">
-						<li><i class="fa fa-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
-						<li><i class="fa fa-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
-						<li><i class="fa fa-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
-						<li><i class="fa fa-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
-						<li><i class="fa fa-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
+					<h5>Media sosial</h5>
+					<!-- iki gawe medsos e -->
+					<ul class="social-network">
+						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
 					</ul>
 				</div>
 				<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
+					<h5 class="widgetheading">Pos terkini</h5>
 					<ul class="recent">
+					@foreach($informasi as $informasi)
 						<li>
-						<img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-						<h6><a href="#">Lorem ipsum dolor sit</a></h6>
+						<img src="{{ $informasi->gambar }}" class="pull-left" alt="" />
+						<h6><a href="#">{{ $informasi->judul }}</a></h6>
 						<p>
-							 Mazim alienum appellantur eu cu ullum officiis pro pri
+							 {{ $informasi->deskripsi }}
 						</p>
 						</li>
-						<li>
-						<a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
-						<h6><a href="#">Maiorum ponderum eum</a></h6>
-						<p>
-							 Mazim alienum appellantur eu cu ullum officiis pro pri
-						</p>
-						</li>
-						<li>
-						<a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
-						<h6><a href="#">Et mei iusto dolorum</a></h6>
-						<p>
-							 Mazim alienum appellantur eu cu ullum officiis pro pri
-						</p>
-						</li>
-					</ul>
-				</div>
-				<div class="widget">
-					<h5 class="widgetheading">Popular tags</h5>
-					<ul class="tags">
-						<li><a href="#">Web design</a></li>
-						<li><a href="#">Trends</a></li>
-						<li><a href="#">Technology</a></li>
-						<li><a href="#">Internet</a></li>
-						<li><a href="#">Tutorial</a></li>
-						<li><a href="#">Development</a></li>
+					@endforeach
 					</ul>
 				</div>
 				</aside>
