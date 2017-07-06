@@ -41,4 +41,19 @@ class HomeController extends Controller
     //   ]);
       return view('halamanutama');
     }
+
+    public show_berita(){
+        $informasi = Informasi::get()->all();
+        return view('halamanutama', 'informasi' => $informasi);
+    }
+
+    public show_slide(){
+        $slides = Slide::get()->all();
+        return view('halamanutama', 'slides' => $slides);
+    }
+
+    public show_profil(){
+        $profil = Profil::get()->all();
+        return view('halamanutama', 'profil' => $profil);
+    }
 }

@@ -37,10 +37,16 @@ class BeritaController extends Controller
 	$informasi->save();
 	return redirect('/admin/informasi');
 	}
+
+  public function show(){
+    $informasi = Informasi::get()->all();
+    return view('berita', 'informasi' => $informasi);
+  }
+
   public function edit($id){
   	$blog = Informasi::find($id);
  		return view('/admin/informasi/edit', ['informasi' => $blog]);
-  	}
+  }
 
   public function update(Request $request, $id){
       $this->validate($request, [
