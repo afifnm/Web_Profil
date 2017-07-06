@@ -5,6 +5,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
+			
+			</div>
+
+			<div class="col-lg-12">
 				<h3>Tentang Kami</h3>
 				<img src="img/dummies/dummy-1200.jpg" alt="" class="img-responsive" />
 	
@@ -14,7 +18,7 @@
 		
 			</div>
 
-		<div class="col-lg-12">
+			<div class="col-lg-12">
 				<h3>Visi Misi</h3>
 				<br>
 				<h4>Visi</h4>

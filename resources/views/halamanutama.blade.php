@@ -9,30 +9,16 @@
 	<!-- Slider -->
         <div id="main-slider" class="main-slider flexslider">
             <ul class="slides">
+            @foreach($slides as $slide)
               <li>
-                <img src="img/slides/flexslider/1.jpg" alt="" />
+                <img src="{{ $slide->gambar }}" alt="" />
                 <div class="flex-caption">
-                    <h3>Modern Design</h3> 
-					<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p> 
+                    <h3>{{ $slide->judul }}</h3> 
+					<p>{{ $slide->deskripsi }}}</p> 
 					<a href="#" class="btn btn-theme">Learn More</a>
                 </div>
               </li>
-              <li>
-                <img src="img/slides/flexslider/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Fully Responsive</h3> 
-					<p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p> 
-					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
-              </li>
-              <li>
-                <img src="img/slides/flexslider/3.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Clean & Fast</h3> 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p> 
-					<a href="#" class="btn btn-theme">Learn More</a>
-                </div>
-              </li>
+            @endforeach
             </ul>
         </div>
 	<!-- end slider -->
@@ -75,8 +61,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8">
-				<h3>{{ $informasi->judul }}</h3>
-				<img src="{{ $informasi->gambar }}" alt="" class="img-responsive" />
+				@foreach($informasi as $informasi)
+				<img src="{{ $informasi->gambar }}" class="pull-left" alt="" />
+				<h6><a href="#">{{ $informasi->judul }}</a></h6>
+				<p>{{ $informasi->deskripsi }}</p>
+				@endforeach
 	
 		
 			<div class="col-lg-4">
@@ -92,9 +81,9 @@
 					<h5>Media sosial</h5>
 					<!-- iki gawe medsos e -->
 					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+						<li><i class="fa fa-facebook"></i>{{ $profil->facebook }}</a></li>
+						<li><i class="fa fa-twitter"></i>{{ $profil->instagram }}</li>
+						<li><i class="fa fa-google-plus"></i>{{ $profil->wa }}</li>
 					</ul>
 				</div>
 				<div class="widget">
@@ -105,7 +94,7 @@
 						<img src="{{ $informasi->gambar }}" class="pull-left" alt="" />
 						<h6><a href="#">{{ $informasi->judul }}</a></h6>
 						<p>
-							 {{ $informasi->deskripsi }}
+							{{ $informasi->deskripsi }}
 						</p>
 						</li>
 					@endforeach
